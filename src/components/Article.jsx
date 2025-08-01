@@ -1,12 +1,15 @@
-import style from './../assets/style/components/aside.module.styl'
 import Filters from "./Filters.jsx";
 import List from "./List.jsx";
+import {useState} from "react";
 
-function Article() {
+function Article({category}) {
+  const [filter, setFilter] = useState('name');
+  const [search, setSearch] = useState(null);
+
   return (
       <article>
-        <Filters />
-        <List />
+        <Filters setSearch={setSearch} setFilter={setFilter} />
+        <List search={search} filter={filter} category={category} />
       </article>
   )
 }

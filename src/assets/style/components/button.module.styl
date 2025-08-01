@@ -2,12 +2,19 @@
 
 .AppButton
   background-color transparent
-  padding 20px 50px
+  padding 20px 50px 20px 62px
   border-radius 20px
   border 1px solid $grey
   width 260px
   text-align left
+  background-repeat no-repeat
+  background-size contain
+  background-position-x -25%
   &:hover
     background-color $yellow
     color $bgColor
     cursor pointer
+
+.AppButtonActive
+  background-color $yellow
+  color $bgColor

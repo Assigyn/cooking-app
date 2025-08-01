@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import Button from "./Button.jsx";
 
-function Aside() {
+function Aside({setCategory}) {
   const [menu, setMenu] = useState([])
 
     useEffect(() => {
@@ -20,7 +20,7 @@ function Aside() {
           <h2 className="font-playfair text-large m-0">Categories</h2>
           <div className={style.AsideMenu}>
               {menu.slice(0, 6).map((item, key) => {
-                  return <Button key={key} item={item}/>
+                  return <Button key={key} item={item} setCategory={setCategory}/>
               })}
           </div>
       </aside>
