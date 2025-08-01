@@ -1,9 +1,10 @@
 import style from './../assets/style/components/button.module.styl'
+import {useEffect} from "react";
+import axios from "axios";
 
-function Button({item, setCategory}) {
-  function setActiveMenu(item) {
-    const id = item.idCategory
-    const active = document.querySelector(`.${style.AppButton}[data-id="${id}"]`);
+function Button({item, setCategory, category}) {
+  useEffect(() => {
+    const active = document.querySelector(`.${style.AppButton}[data-id="${category}"]`);
     const btns = document.querySelectorAll(`.${style.AppButton}`);
 
     btns.forEach(function (btn) {
@@ -11,12 +12,10 @@ function Button({item, setCategory}) {
     })
 
     active.classList.add(style.AppButtonActive);
-
-    return setCategory(item.strCategory);
-  }
+  }, [category]);
 
   return (
-      <button data-id={item.idCategory} onClick={() => {setActiveMenu(item)}} style={{backgroundImage: `url(${item.strCategoryThumb})`}} className={style.AppButton}>
+      <button data-id={item.strCategory} onClick={() => {setCategory(item.strCategory)}} style={{backgroundImage: `url(${item.strCategoryThumb})`}} className={style.AppButton}>
         {item.strCategory}
       </button>
   )

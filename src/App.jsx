@@ -10,7 +10,7 @@ function App() {
       <div className="container">
         <Header />
         <main>
-          <Aside setCategory={setCategory} />
+          <Aside setCategory={setCategory} category={category}/>
           <Article category={category} />
         </main>
       </div>
