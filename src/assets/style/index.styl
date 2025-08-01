@@ -1,2 +1,41 @@
+@import "variables.styl"
+
 body
-    background-color red
+    background-color $bgColor
+
+*
+  color $light
+  font-family: "Outfit", sans-serif;
+  font-size 1rem
+
+main
+  padding 32px 50px
+  display flex
+  flex-direction row
+  gap 30px
+
+.font
+  &-playfair
+    font-family: "Playfair Display", serif;
+  &-outif
+    font-family: "Outfit", sans-serif;
+
+.m-0
+  margin 0
+
+.text
+  &-large
+    font-size 1.5rem
+    font-weight 600
+  &-medium
+    font-size 1rem
+    font-weight 800
+  &-regular
+    font-size 0.875rem
+    font-weight 800
+  &-small
+    font-size 0.75rem
+
+.container
+  max-width 1350px
+  margin auto
