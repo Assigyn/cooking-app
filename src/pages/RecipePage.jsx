@@ -3,7 +3,9 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import styles from "./../assets/style/pages/recipe.module.styl"
 import logo from "./../assets/img/logo-light.svg"
+import expand from "./../assets/img/Expand_left.svg"
 import RecipeUtils from "../utils/RecipeUtils.js";
+import Subtitle from "../components/SubTitle.jsx";
 
 function RecipePage() {
     const {id} = useParams()
@@ -27,7 +29,9 @@ function RecipePage() {
         <div>
             <div className={styles.RecipePageHeader}>
                 <img src={logo} alt="logo"/>
-                <button onClick={() => {navigate(`/${recipe.strCategory}`)}}>Back to categories</button>
+                <button onClick={() => {navigate(`/${recipe.strCategory}`)}}>
+                    <img src={expand} alt="expand_icon"/>Back to categories
+                </button>
             </div>
 
             <article className={styles.RecipePageArticle}>
@@ -39,19 +43,13 @@ function RecipePage() {
                     {recipe.strArea ? <span>area : <b>{recipe.strArea}</b></span> : null}
                 </div>
 
-                <div className={styles.AppSubTitle}>
-                    <span className={`${styles.AppSubTitleSpan} bg-yellow`}></span>
-                    <h2 className="m-0">Ingredients</h2>
-                </div>
+                <Subtitle title="Ingredients" color="yellow" />
 
                 <ul className={styles.AppSubList}>{RecipeUtils.getIngredients(recipe).map((data, key) => {
                     return <li key={key}>{`${data.measure} ${data.ingredient}`}</li>
                 })}</ul>
 
-                <div className={styles.AppSubTitle}>
-                    <span className={`${styles.AppSubTitleSpan} bg-blue`}></span>
-                    <h2 className="m-0">Instructions</h2>
-                </div>
+                <Subtitle title="Instructions" color="blue" />
 
                 {instructions.map((paragraph, key) => {
                     return <p key={key}>{paragraph}</p>
