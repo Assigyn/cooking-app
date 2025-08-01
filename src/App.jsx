@@ -1,19 +1,17 @@
-import Header from "./components/Header.jsx";
-import Aside from "./components/Aside.jsx";
-import Article from "./components/Article.jsx";
-import {useState} from "react";
+import RecipePage from "./pages/RecipePage.jsx";
+import IndexPage from "./pages/IndexPage.jsx";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [category, setCategory] = useState('Dessert');
-
   return (
-      <div className="container">
-        <Header />
-        <main>
-          <Aside setCategory={setCategory} category={category}/>
-          <Article category={category} />
-        </main>
-      </div>
+      <Router>
+          <div className="container">
+              <Routes>
+                  <Route path="/:categoryName?" element={<IndexPage />} />
+                  <Route path="/recipe/:id" element={<RecipePage />} />
+              </Routes>
+          </div>
+      </Router>
   )
 }
 

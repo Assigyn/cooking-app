@@ -15,8 +15,19 @@
   &::placeholder
     color $light
 
-.AppFilter
+.AppFilterContainer
   background-color $light
-  border-radius 20px
+  display flex
+  flex-direction row
+  align-items center
+  gap 5px
   padding 12px 24px
+  border-radius 20px
+  label
+    color $bgColor
+
+.AppFilter
+  border 0
+  background-color $light
   color: $bgColor
+  font-weight bold
