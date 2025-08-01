@@ -1,10 +1,12 @@
 import {useNavigate, useParams} from "react-router-dom";
-import axios from "axios";
 import {useEffect, useState} from "react";
+import axios from "axios";
+import RecipeUtils from "../utils/RecipeUtils.js";
+
 import styles from "./../assets/style/pages/recipe.module.styl"
 import logo from "./../assets/img/logo-light.svg"
 import expand from "./../assets/img/Expand_left.svg"
-import RecipeUtils from "../utils/RecipeUtils.js";
+
 import Subtitle from "../components/SubTitle.jsx";
 
 function RecipePage() {
