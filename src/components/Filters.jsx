@@ -53,7 +53,10 @@ function Filters({setSearch, setFilter, filter}) {
 
                 <ul id="filter-menu" ref={menuRef}>
                     {options.map((option, key) => {
-                        return <li key={key} value={option.value } onClick={() => {setFilter(option.value)}}>{option.text}</li>
+                        return <li key={key} value={option.value } onClick={(e) => {
+                            displayMenu(e);
+                            setFilter(option.value)}
+                        }>{option.text}</li>
                     })}
                 </ul>
             </div>
