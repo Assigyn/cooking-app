@@ -39,7 +39,7 @@ function Article({category}) {
 
   return (
       <article>
-          <Filters setSearch={setSearch} setFilter={setFilter}/>
+          <Filters setSearch={setSearch} setFilter={setFilter} filter={filter}/>
 
           <div className={style.AppList}>
               {filteredList.map((meal, key) => {

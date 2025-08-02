@@ -9,23 +9,40 @@
 
 .AppSearch
   background-color transparent
-  width 50%
+  width 40%
   border-radius 20px
-  padding 12px 24px
+  padding 12px 24px 12px 60px
   border 1px solid $grey
+  background-image url("../../img/Search.svg")
+  background-position 24px 50%
+  background-repeat no-repeat
   &::placeholder
     color $light
 
 .AppFilterContainer
-  background-color $light
-  display flex
-  flex-direction row
-  align-items center
-  gap 5px
-  padding 12px 24px
-  border-radius 20px
-  label
+  button
     color $bgColor
+    padding 12px 44px 12px 24px
+    border-radius 20px
+    background-image  url('../../img/Expand_down.svg')
+    background-repeat no-repeat
+    background-position 90% 50%
+    span
+      color $bgColor
+      font-weight bold
+  ul
+    position: absolute;
+    background-color: $light;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display none
+    li
+      color $bgColor
+      padding 12px 24px
+      border-bottom 1px solid $bgColor
+      &:hover
+        cursor pointer
 
 .AppFilter
   border 0
