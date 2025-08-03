@@ -6,13 +6,20 @@
   background-size cover
   border-radius 20px
   display flex
-  flex-direction row
+  flex-direction column
+  align-items center
   justify-content center
+  img
+    margin-left -205px
+    margin-bottom 40px
   h1,
   span
     color $bgColor
   h1
     align-self center
+  span
+    display inline-block
+    margin-left 100px
   @media screen and (max-width: 1024px)
     background-image url("../../img/hero-image-sm.jpg")
-    height 315px
+    background-position 25% 100%
